@@ -1,0 +1,78 @@
+﻿@page
+@model MyFirstWebApplication.Pages.AboutModel
+@{
+    ViewData["Title"] = "About C# 12";
+}
+
+<h1 class="display-4">Welcome To "@ViewData["Title"]" Page!</h1>
+
+<div class="container">
+    <p class="dark-text"><b><i>Now it's exactly:</i> @DateTime.Now</b></p>
+    <p class="dark-text">
+        <i>
+            C# 12 is available today! You can get it by downloading .NET 8, 
+            the latest Visual Studio, or Visual Studio Code’s C# Dev Kit.
+            C# 12 brings better developer productivity with simplified syntax, 
+            and faster execution. You can check out details on each feature in the What’s new in C# 12 article 
+            on MS Learn. The What’s new article includes links to updates across the C# documentation 
+            on MS Learn that reflect the new features.
+        </i>
+    </p>
+    <p class="dark-text">
+        <b>
+            <i>
+                As we can see, but below is a test regarding the performance of the new version of C# 12:
+            </i>
+        </b>
+    </p>
+</div>
+
+<br />
+<br />
+
+<div class="container">
+    <hr size="21px" width="100%" style="background-color: purple;" />
+
+    <form method="post">
+
+        <label class="text-dark" for="inputReturnNumberID"><b>Enter a number:</b></label>
+
+        <br />
+
+        <input id="inputReturnNumberID" type="number" name="inputReturnNumber"
+            style="width: 32%; padding-left: 1%;" placeholder="Please, enter a number to get a table from this"
+            required />
+
+
+        <input class="btn btn-dark" type="submit" value="Calculate" style="margin-left: 1%;" />
+    </form>
+</div>
+
+<br />
+
+<div class="container">
+
+    @if (Model.hasData)
+    {
+        <hr size="21px" width="100%" style="background-color: purple;" />
+
+        <h3 class="display-5"><i>Your Multiplication Table Number Results is:</i></h3>
+
+        @if (Model.ValueTyped == 7)
+        {
+            <h4 id="jesus">Jesus</h4>
+        }
+
+        <div class="mt-3 embbed-container-element">
+
+            <table>
+                @for (int index = 0; index <= Model.MaximumLegthOfMultiplicationTable; index++)
+                {
+                    <tr><td class="text-dark">@Model.ShowTable(index)</td></tr>
+                }
+            </table>
+
+        </div>
+    }
+
+</div>

@@ -1,0 +1,72 @@
+﻿@page
+@model MyFirstWebApplication.Pages.ContactUsModel
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<h1 class="display-4"><b>@ViewData["Title"]</b></h1>
+<h2><i>Here is the page to have more contact with us</i></h2>
+
+<br />
+<br />
+
+<hr size="21px" width="100%" style="background-color: purple;" />
+
+<br />
+
+<div class="flex-container">
+
+    <div id="item-form" class="item">
+
+        <form method="post">
+            <label for="eMailID"><b>Your e-mail</b></label>
+            <br />
+            <input id="eMailID" class="input-text-area" name="eMail" type="email"
+                   placeholder="Please, enter your e-mail" required />
+
+            <br />
+            <br />
+
+            <label for="SubjectID"><b>Your Subject</b></label>
+            <br />
+            <input id="SubjectID" class="input-text-area" name="Subject" type="text"
+                   placeholder="Please, enter the subject" required />
+    
+            <br />
+            <br />
+    
+            <label for="MessageID"><b>Your Message</b></label>
+            <br />
+            <textarea id="MessageID" class="text-area-email" name="Message" 
+                      placeholder="Please, enter the message" required /></textarea>
+    
+            <br />
+            <br />
+    
+            <input class="btn btn-dark" type="submit" value="Send" style="width: 42%;" />
+        </form>
+
+    </div>
+
+    @if (Model.hasData)
+    {
+        <div id="item-entered-informations" class="item mb-4">
+
+            <div class="embbed-container-elements">
+                <h3 class="display-5"><i>Here is the entered informations:</i></h3>
+                <br />
+
+                <p><b>The e-mail that You typed was:</b><br /> @Model.email</p>
+
+                <br />
+
+                <p><b>The subject that You typed was:</b><br /> @Model.subject</p>
+
+                <br />
+
+                <p><b>The text that You typed was:</b><br /> @Model.textBody</p>
+            </div>
+
+        </div>
+    }
+</div>
