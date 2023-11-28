@@ -1,11 +1,11 @@
 ﻿<h1 align="center">
 	<img src="wwwroot/img/access_web.jpg" />
-	<p> Here we ha My First Web App project!!</p>
+	<p> Here we have My First Web App project!!</p>
 </h1>
 
 ## 📚 About
 
-This is me First project developed on the ASP.NET Core platform (C#)!! :)
+This is me First project developed on the ASP.NET Core platform (C#)!! :)<br />
 Here I used the initial template provided by ASP, but I added some operations to get values entered on
 pages like "About" and "Contact Us", as well as an easter egg.
 
